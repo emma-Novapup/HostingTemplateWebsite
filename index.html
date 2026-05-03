@@ -169,4 +169,125 @@
         .card {
             background: var(--card-bg);
             border: 1px solid var(--border);
-            border-radius:
+            border-radius: 20px;
+            padding: 40px;
+            transition: 0.3s;
+            position: relative;
+        }
+
+        .card.featured {
+            border: 2px solid var(--primary);
+        }
+
+        .price {
+            font-size: 3rem;
+            font-weight: 800;
+            margin: 20px 0;
+        }
+
+        .price span { font-size: 1rem; color: var(--text-muted); }
+
+        .specs {
+            list-style: none;
+            margin-bottom: 32px;
+        }
+
+        .specs li {
+            padding: 12px 0;
+            border-bottom: 1px solid #1e293b;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            border-top: 1px solid var(--border);
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        /* MOBILE FIXES */
+        @media (max-width: 768px) {
+            .nav-links { display: none; } /* Hide text links to save space */
+            .logo { font-size: 1.1rem; }
+            .btn-primary { padding: 8px 16px; font-size: 0.85rem; }
+            .hero { padding: 60px 0 40px; }
+            .card { padding: 25px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav class="container">
+            <div class="logo">HostingTemplateSite</div>
+            <ul class="nav-links">
+                <li><a href="#pricing">Game Servers</a></li>
+                <li><a href="https://emma-novapup.github.io/HostingTemplateSite-VPS/">VPS Hosting</a></li>
+                <li><a href="https://emma-novapup.github.io/HostingTemplateSite-Dedicated/">Dedicated</a></li>
+            </ul>
+            <a href="#" class="btn-primary">Client Portal</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-glow"></div>
+            <div class="container">
+                <span class="badge">Enterprise-Grade Infrastructure</span>
+                <h1>Powerful Hosting <br><span class="gradient-text">Without Limits.</span></h1>
+                <p>Ultra-low latency nodes powered by Ryzen 9 processors and NVMe storage. Deployed in seconds.</p>
+            </div>
+        </section>
+
+        <section id="pricing" class="container pricing-section">
+            <div class="pricing-grid">
+                <div class="card">
+                    <h3>Node Starter</h3>
+                    <div class="price">$5.99<span>/mo</span></div>
+                    <ul class="specs">
+                        <li><strong>4GB</strong> DDR4 RAM</li>
+                        <li><strong>2</strong> vCores (3.8GHz+)</li>
+                        <li><strong>40GB</strong> NVMe SSD</li>
+                        <li>DDoS Protection</li>
+                    </ul>
+                    <a href="#" class="btn-primary" style="display:block; text-align:center;">Order Now</a>
+                </div>
+
+                <div class="card featured">
+                    <div style="position:absolute; top:-12px; right:20px; background:var(--primary); font-size:0.7rem; padding:4px 12px; border-radius:100px; font-weight:800; color:white;">POPULAR</div>
+                    <h3>Node Pro</h3>
+                    <div class="price">$14.99<span>/mo</span></div>
+                    <ul class="specs">
+                        <li><strong>12GB</strong> DDR4 RAM</li>
+                        <li><strong>4</strong> vCores (4.2GHz+)</li>
+                        <li><strong>100GB</strong> NVMe SSD</li>
+                        <li>Priority Support</li>
+                    </ul>
+                    <a href="#" class="btn-primary" style="display:block; text-align:center;">Order Now</a>
+                </div>
+
+                <div class="card">
+                    <h3>Node Extreme</h3>
+                    <div class="price">$29.99<span>/mo</span></div>
+                    <ul class="specs">
+                        <li><strong>32GB</strong> DDR4 RAM</li>
+                        <li><strong>8</strong> vCores (Peak Performance)</li>
+                        <li><strong>250GB</strong> NVMe SSD</li>
+                        <li>Dedicated IP</li>
+                    </ul>
+                    <a href="#" class="btn-primary" style="display:block; text-align:center;">Order Now</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 HostingTemplateSite. Built for high-performance communities.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
