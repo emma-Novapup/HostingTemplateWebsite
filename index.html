@@ -38,7 +38,6 @@
             padding: 0 24px;
         }
 
-        /* Header Fix: Prevents the long name from cutting off */
         header {
             height: 80px;
             display: flex;
@@ -90,6 +89,7 @@
             font-weight: 600;
             transition: 0.3s;
             white-space: nowrap;
+            display: inline-block;
         }
 
         .btn-primary:hover {
@@ -97,7 +97,6 @@
             transform: translateY(-1px);
         }
 
-        /* Hero Section */
         .hero {
             padding: 120px 0 80px;
             text-align: center;
@@ -124,6 +123,7 @@
             border-radius: 100px;
             font-size: 0.85rem;
             border: 1px solid rgba(79, 70, 229, 0.2);
+            font-weight: 600;
         }
 
         h1 {
@@ -147,7 +147,6 @@
             margin: 24px auto 40px;
         }
 
-        /* Pricing Grid */
         .pricing-section { padding: 80px 0; }
         
         .pricing-grid {
@@ -218,7 +217,7 @@
             <div class="logo">HostingTemplateSite</div>
             <ul class="nav-links">
                 <li><a href="#pricing">Game Servers</a></li>
-                <li><a href="#pricing">VPS Hosting</a></li>
+                <li><a href="https://emma-novapup.github.io/HostingTemplateSite-VPS/">VPS Hosting</a></li>
                 <li><a href="#pricing">Dedicated</a></li>
             </ul>
             <a href="#" class="btn-primary">Client Portal</a>
@@ -250,7 +249,7 @@
                 </div>
 
                 <div class="card featured">
-                    <div style="position:absolute; top:-12px; right:20px; background:var(--primary); font-size:0.7rem; padding:4px 12px; border-radius:100px; font-weight:800;">POPULAR</div>
+                    <div style="position:absolute; top:-12px; right:20px; background:var(--primary); font-size:0.7rem; padding:4px 12px; border-radius:100px; font-weight:800; color:white;">POPULAR</div>
                     <h3>Node Pro</h3>
                     <div class="price">$14.99<span>/mo</span></div>
                     <ul class="specs">
