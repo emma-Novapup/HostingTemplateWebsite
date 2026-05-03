@@ -3,51 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Website</title>
-    <style>
-        /* Basic styling to make it look clean */
-        body {
-            font-family: sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 20px;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-        header {
-            background: #2c3e50;
-            color: #fff;
-            padding: 1rem;
-            text-align: center;
-        }
-        main {
-            background: #fff;
-            padding: 20px;
-            margin-top: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-    </style>
+    <title>NimoraNode | High-Performance Hosting</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <header>
-        <h1>Welcome to My Site</h1>
+        <nav class="container">
+            <div class="logo">NimoraNode</div>
+            <ul>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#support">Support</a></li>
+                <li><a href="#" class="btn-nav">Client Portal</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <main>
-        <h2>About This Page</h2>
-        <p>This is a basic HTML template. You can use this as a foundation for your projects, whether you're hosting a portfolio, a landing page, or a custom dashboard.</p>
-        
-        <ul>
-            <li>Mobile responsive</li>
-            <li>Clean, modern font</li>
-            <li>Easy to customize</li>
-        </ul>
-    </main>
+    <section class="hero">
+        <div class="container">
+            <h1>Next-Gen Server Hosting</h1>
+            <p>Deploy high-performance game servers and web apps in seconds with our optimized infrastructure.</p>
+            <a href="#pricing" class="btn-main">View Plans</a>
+        </div>
+    </section>
+
+    <section id="features" class="features container">
+        <div class="feature-card">
+            <h3>NVMe Storage</h3>
+            <p>Blazing fast load times with enterprise-grade NVMe SSDs.</p>
+        </div>
+        <div class="feature-card">
+            <h3>DDoS Protection</h3>
+            <p>Advanced mitigation to keep your services online 24/7.</p>
+        </div>
+        <div class="feature-card">
+            <h3>99.9% Uptime</h3>
+            <p>Reliable hardware backed by a robust network SLA.</p>
+        </div>
+    </section>
+
+    <section id="pricing" class="pricing container">
+        <div class="price-box">
+            <h4>Starter</h4>
+            <div class="price">$5<span>/mo</span></div>
+            <ul>
+                <li>2GB RAM</li>
+                <li>20GB NVMe</li>
+                <li>1 vCore CPU</li>
+            </ul>
+            <a href="#" class="btn-buy">Select Plan</a>
+        </div>
+        <div class="price-box featured">
+            <h4>Professional</h4>
+            <div class="price">$15<span>/mo</span></div>
+            <ul>
+                <li>8GB RAM</li>
+                <li>80GB NVMe</li>
+                <li>4 vCore CPU</li>
+            </ul>
+            <a href="#" class="btn-buy">Select Plan</a>
+        </div>
+        <div class="price-box">
+            <h4>Ultimate</h4>
+            <div class="price">$30<span>/mo</span></div>
+            <ul>
+                <li>16GB RAM</li>
+                <li>150GB NVMe</li>
+                <li>Unlimited Slots</li>
+            </ul>
+            <a href="#" class="btn-buy">Select Plan</a>
+        </div>
+    </section>
 
     <footer>
-        <p>&copy; 2026 My Website</p>
+        <p>&copy; 2026 NimoraNode Hosting. All rights reserved.</p>
     </footer>
 
 </body>
