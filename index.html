@@ -3,105 +3,283 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NimoraNode | Premium Game & Web Hosting</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <title>HostingTemplateSite | Next-Gen Hosting</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg: #05070a;
+            --card-bg: #0d1117;
+            --primary: #4f46e5;
+            --primary-glow: rgba(79, 70, 229, 0.3);
+            --text-main: #ffffff;
+            --text-muted: #94a3b8;
+            --border: #1e293b;
+            --accent: #818cf8;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header Fix: Prevents the long name from cutting off */
+        header {
+            height: 80px;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid var(--border);
+            backdrop-filter: blur(12px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(5, 7, 10, 0.8);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 32px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover { color: var(--primary); }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            padding: 10px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+            white-space: nowrap;
+        }
+
+        .btn-primary:hover {
+            box-shadow: 0 0 20px var(--primary-glow);
+            transform: translateY(-1px);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 120px 0 80px;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-glow {
+            position: absolute;
+            top: -150px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 800px;
+            height: 500px;
+            background: var(--primary-glow);
+            filter: blur(120px);
+            z-index: -1;
+            border-radius: 50%;
+        }
+
+        .badge {
+            background: rgba(79, 70, 229, 0.1);
+            color: var(--accent);
+            padding: 6px 16px;
+            border-radius: 100px;
+            font-size: 0.85rem;
+            border: 1px solid rgba(79, 70, 229, 0.2);
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 800;
+            margin-top: 24px;
+            letter-spacing: -3px;
+            line-height: 1;
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #818cf8, #c084fc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            color: var(--text-muted);
+            font-size: 1.2rem;
+            max-width: 650px;
+            margin: 24px auto 40px;
+        }
+
+        /* Pricing Grid */
+        .pricing-section { padding: 80px 0; }
+        
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 40px;
+            transition: 0.3s;
+            position: relative;
+        }
+
+        .card:hover {
+            border-color: var(--primary);
+            background: #11161d;
+        }
+
+        .card.featured {
+            border: 2px solid var(--primary);
+            box-shadow: 0 0 30px rgba(79, 70, 229, 0.1);
+        }
+
+        .price {
+            font-size: 3rem;
+            font-weight: 800;
+            margin: 20px 0;
+        }
+
+        .price span { font-size: 1rem; color: var(--text-muted); }
+
+        .specs {
+            list-style: none;
+            margin-bottom: 32px;
+        }
+
+        .specs li {
+            padding: 12px 0;
+            border-bottom: 1px solid #1e293b;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .specs li strong { color: var(--text-main); }
+
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            border-top: 1px solid var(--border);
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            h1 { letter-spacing: -1px; }
+        }
+    </style>
 </head>
 <body>
 
     <header>
         <nav class="container">
-            <div class="logo">Nimora<span>Node</span></div>
+            <div class="logo">HostingTemplateSite</div>
             <ul class="nav-links">
-                <li><a href="#features">Infrastructure</a></li>
                 <li><a href="#pricing">Game Servers</a></li>
-                <li><a href="#vps">VPS</a></li>
+                <li><a href="#pricing">VPS Hosting</a></li>
+                <li><a href="#pricing">Dedicated</a></li>
             </ul>
-            <div class="nav-auth">
-                <a href="#" class="btn-secondary">Login</a>
-                <a href="#" class="btn-primary">Register</a>
-            </div>
+            <a href="#" class="btn-primary">Client Portal</a>
         </nav>
     </header>
 
     <main>
         <section class="hero">
-            <div class="container hero-content">
-                <span class="badge">Powered by Enterprise Hardware</span>
-                <h1>Performance that scales <br><span class="gradient-text">with your community.</span></h1>
-                <p>Experience ultra-low latency, 12Tbps DDoS protection, and 99.9% uptime. Managed by experts, hosted on the edge.</p>
-                <div class="hero-actions">
-                    <a href="#pricing" class="btn-primary-large">Get Started</a>
-                    <a href="#features" class="btn-outline">Why choose us?</a>
-                </div>
-            </div>
             <div class="hero-glow"></div>
-        </section>
-
-        <section id="features" class="container features-grid">
-            <div class="card feature">
-                <div class="icon">⚡</div>
-                <h3>Ryzen 9 Performance</h3>
-                <p>We only use high-clock speed CPUs to ensure your FiveM or Minecraft servers never drop a frame.</p>
-            </div>
-            <div class="card feature">
-                <div class="icon">🛡️</div>
-                <h3>Global Mitigation</h3>
-                <p>Enterprise-grade DDoS protection that filters attacks before they ever reach your instance.</p>
-            </div>
-            <div class="card feature">
-                <div class="icon">🚀</div>
-                <h3>Instant Setup</h3>
-                <p>Our automated provisioning system gets your server online within 60 seconds of payment.</p>
+            <div class="container">
+                <span class="badge">Enterprise-Grade Infrastructure</span>
+                <h1>Powerful Hosting <br><span class="gradient-text">Without Limits.</span></h1>
+                <p>Ultra-low latency nodes powered by Ryzen 9 processors and NVMe storage. Deployed in seconds.</p>
             </div>
         </section>
 
-        <section id="pricing" class="container">
-            <h2 class="section-title">Transparent Pricing</h2>
+        <section id="pricing" class="container pricing-section">
             <div class="pricing-grid">
-                <div class="card pricing-card">
-                    <h4>Node Starter</h4>
+                <div class="card">
+                    <h3>Node Starter</h3>
                     <div class="price">$5.99<span>/mo</span></div>
                     <ul class="specs">
-                        <li><strong>4GB</strong> DDR4 ECC RAM</li>
-                        <li><strong>2</strong> Logical Cores</li>
-                        <li><strong>50GB</strong> NVMe Gen4</li>
-                        <li>Global Locations</li>
+                        <li><strong>4GB</strong> DDR4 RAM</li>
+                        <li><strong>2</strong> vCores (3.8GHz+)</li>
+                        <li><strong>40GB</strong> NVMe SSD</li>
+                        <li>DDoS Protection</li>
                     </ul>
-                    <a href="#" class="btn-outline-full">Deploy Now</a>
-                </div>
-                
-                <div class="card pricing-card featured">
-                    <div class="popular-tag">Most Popular</div>
-                    <h4>Node Pro</h4>
-                    <div class="price">$14.99<span>/mo</span></div>
-                    <ul class="specs">
-                        <li><strong>12GB</strong> DDR4 ECC RAM</li>
-                        <li><strong>4</strong> Logical Cores</li>
-                        <li><strong>100GB</strong> NVMe Gen4</li>
-                        <li>Dedicated IP Available</li>
-                    </ul>
-                    <a href="#" class="btn-primary-full">Deploy Now</a>
+                    <a href="#" class="btn-primary" style="display:block; text-align:center;">Order Now</a>
                 </div>
 
-                <div class="card pricing-card">
-                    <h4>Node Elite</h4>
-                    <div class="price">$29.99<span>/mo</span></div>
+                <div class="card featured">
+                    <div style="position:absolute; top:-12px; right:20px; background:var(--primary); font-size:0.7rem; padding:4px 12px; border-radius:100px; font-weight:800;">POPULAR</div>
+                    <h3>Node Pro</h3>
+                    <div class="price">$14.99<span>/mo</span></div>
                     <ul class="specs">
-                        <li><strong>32GB</strong> DDR4 ECC RAM</li>
-                        <li><strong>8</strong> Logical Cores</li>
-                        <li><strong>250GB</strong> NVMe Gen4</li>
+                        <li><strong>12GB</strong> DDR4 RAM</li>
+                        <li><strong>4</strong> vCores (4.2GHz+)</li>
+                        <li><strong>100GB</strong> NVMe SSD</li>
                         <li>Priority Support</li>
                     </ul>
-                    <a href="#" class="btn-outline-full">Deploy Now</a>
+                    <a href="#" class="btn-primary" style="display:block; text-align:center;">Order Now</a>
+                </div>
+
+                <div class="card">
+                    <h3>Node Extreme</h3>
+                    <div class="price">$29.99<span>/mo</span></div>
+                    <ul class="specs">
+                        <li><strong>32GB</strong> DDR4 RAM</li>
+                        <li><strong>8</strong> vCores (Peak Performance)</li>
+                        <li><strong>250GB</strong> NVMe SSD</li>
+                        <li>Dedicated IP</li>
+                    </ul>
+                    <a href="#" class="btn-primary" style="display:block; text-align:center;">Order Now</a>
                 </div>
             </div>
         </section>
     </main>
 
     <footer>
-        <div class="container footer-content">
-            <p>&copy; 2026 NimoraNode Hosting. High-performance gaming solutions.</p>
+        <div class="container">
+            <p>&copy; 2026 HostingTemplateSite. Built for high-performance communities.</p>
         </div>
     </footer>
 
