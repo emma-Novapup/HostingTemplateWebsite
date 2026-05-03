@@ -29,17 +29,17 @@
             background-color: var(--bg);
             color: var(--text-main);
             line-height: 1.6;
-            overflow-x: hidden;
+            overflow-x: hidden; /* Prevents side-scrolling */
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 24px;
+            padding: 0 20px;
         }
 
         header {
-            height: 80px;
+            min-height: 80px;
             display: flex;
             align-items: center;
             border-bottom: 1px solid var(--border);
@@ -48,6 +48,7 @@
             top: 0;
             z-index: 1000;
             background: rgba(5, 7, 10, 0.8);
+            padding: 10px 0;
         }
 
         nav {
@@ -55,26 +56,26 @@
             justify-content: space-between;
             align-items: center;
             width: 100%;
+            gap: 15px;
         }
 
         .logo {
-            font-size: 1.4rem;
+            font-size: 1.2rem; /* Scaled down for mobile */
             font-weight: 800;
             letter-spacing: -1px;
             white-space: nowrap;
-            flex-shrink: 0;
         }
 
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 32px;
+            gap: 24px;
         }
 
         .nav-links a {
             text-decoration: none;
             color: var(--text-muted);
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             transition: 0.3s;
         }
 
@@ -83,35 +84,31 @@
         .btn-primary {
             background: var(--primary);
             color: white;
-            padding: 10px 24px;
+            padding: 10px 20px;
             border-radius: 8px;
             text-decoration: none;
             font-weight: 600;
             transition: 0.3s;
             white-space: nowrap;
-            display: inline-block;
-        }
-
-        .btn-primary:hover {
-            box-shadow: 0 0 20px var(--primary-glow);
-            transform: translateY(-1px);
+            font-size: 0.9rem;
         }
 
         .hero {
-            padding: 120px 0 80px;
+            padding: 80px 0 60px;
             text-align: center;
             position: relative;
         }
 
         .hero-glow {
             position: absolute;
-            top: -150px;
+            top: -100px;
             left: 50%;
             transform: translateX(-50%);
-            width: 800px;
-            height: 500px;
+            width: 100%;
+            max-width: 600px;
+            height: 400px;
             background: var(--primary-glow);
-            filter: blur(120px);
+            filter: blur(80px);
             z-index: -1;
             border-radius: 50%;
         }
@@ -119,19 +116,20 @@
         .badge {
             background: rgba(79, 70, 229, 0.1);
             color: var(--accent);
-            padding: 6px 16px;
+            padding: 6px 14px;
             border-radius: 100px;
-            font-size: 0.85rem;
+            font-size: 0.75rem;
             border: 1px solid rgba(79, 70, 229, 0.2);
             font-weight: 600;
+            display: inline-block;
         }
 
         h1 {
-            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-size: clamp(2rem, 8vw, 4rem); /* Responsive typography */
             font-weight: 800;
-            margin-top: 24px;
-            letter-spacing: -3px;
-            line-height: 1;
+            margin-top: 20px;
+            letter-spacing: -2px;
+            line-height: 1.1;
         }
 
         .gradient-text {
@@ -142,16 +140,16 @@
 
         .hero p {
             color: var(--text-muted);
-            font-size: 1.2rem;
-            max-width: 650px;
-            margin: 24px auto 40px;
+            font-size: clamp(1rem, 4vw, 1.15rem);
+            max-width: 550px;
+            margin: 20px auto 32px;
         }
 
-        .pricing-section { padding: 80px 0; }
+        .pricing-section { padding: 40px 0 80px; }
         
         .pricing-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 24px;
         }
 
@@ -159,53 +157,54 @@
             background: var(--card-bg);
             border: 1px solid var(--border);
             border-radius: 20px;
-            padding: 40px;
+            padding: 30px;
             transition: 0.3s;
             position: relative;
         }
 
         .card:hover {
             border-color: var(--primary);
-            background: #11161d;
+            transform: translateY(-5px);
         }
 
         .card.featured {
             border: 2px solid var(--primary);
-            box-shadow: 0 0 30px rgba(79, 70, 229, 0.1);
         }
 
         .price {
-            font-size: 3rem;
+            font-size: 2.5rem;
             font-weight: 800;
-            margin: 20px 0;
+            margin: 15px 0;
         }
 
-        .price span { font-size: 1rem; color: var(--text-muted); }
+        .price span { font-size: 0.9rem; color: var(--text-muted); }
 
         .specs {
             list-style: none;
-            margin-bottom: 32px;
+            margin-bottom: 24px;
         }
 
         .specs li {
-            padding: 12px 0;
+            padding: 10px 0;
             border-bottom: 1px solid #1e293b;
             color: var(--text-muted);
-            font-size: 0.95rem;
+            font-size: 0.9rem;
         }
-
-        .specs li strong { color: var(--text-main); }
 
         footer {
             text-align: center;
-            padding: 40px 0;
+            padding: 40px 20px;
             border-top: 1px solid var(--border);
             color: var(--text-muted);
-            font-size: 0.85rem;
+            font-size: 0.8rem;
         }
 
+        /* Responsive Fixes */
         @media (max-width: 768px) {
-            .nav-links { display: none; }
+            .nav-links { display: none; } /* Standard for mobile unless using a burger menu */
+            .logo { font-size: 1.1rem; }
+            .hero { padding: 60px 0 40px; }
+            .card { padding: 24px; }
         }
     </style>
 </head>
@@ -213,13 +212,13 @@
 
     <header>
         <nav class="container">
-            <div class="logo">HostingTemplateSite</div>
+            <div class="logo">HostingTemplate</div>
             <ul class="nav-links">
-                <li><a href="#pricing">Game Servers</a></li>
-                <li><a href="https://emma-novapup.github.io/HostingTemplateSite-VPS/">VPS Hosting</a></li>
-                <li><a href="https://emma-novapup.github.io/HostingTemplateSite-Dedicated/">Dedicated</a></li>
+                <li><a href="#pricing">Servers</a></li>
+                <li><a href="#">VPS</a></li>
+                <li><a href="#">Dedicated</a></li>
             </ul>
-            <a href="#" class="btn-primary">Client Portal</a>
+            <a href="#" class="btn-primary">Portal</a>
         </nav>
     </header>
 
@@ -227,9 +226,9 @@
         <section class="hero">
             <div class="hero-glow"></div>
             <div class="container">
-                <span class="badge">Enterprise-Grade Infrastructure</span>
+                <span class="badge">Enterprise Infrastructure</span>
                 <h1>Powerful Hosting <br><span class="gradient-text">Without Limits.</span></h1>
-                <p>Ultra-low latency nodes powered by Ryzen 9 processors and NVMe storage. Deployed in seconds.</p>
+                <p>Ultra-low latency nodes powered by Ryzen 9 and NVMe storage. Deployed in seconds.</p>
             </div>
         </section>
 
@@ -265,7 +264,7 @@
                     <div class="price">$29.99<span>/mo</span></div>
                     <ul class="specs">
                         <li><strong>32GB</strong> DDR4 RAM</li>
-                        <li><strong>8</strong> vCores (Peak Performance)</li>
+                        <li><strong>8</strong> vCores</li>
                         <li><strong>250GB</strong> NVMe SSD</li>
                         <li>Dedicated IP</li>
                     </ul>
@@ -277,7 +276,7 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2026 HostingTemplateSite. Built for high-performance communities.</p>
+            <p>&copy; 2026 HostingTemplateSite. Built for performance.</p>
         </div>
     </footer>
 
